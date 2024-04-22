@@ -22,7 +22,7 @@ function main() {
 	const far = 25;
 	const camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
 	camera.position.set(0, 3, 10);
-
+	  
 	const controls = new OrbitControls( camera, canvas );
 	controls.target.set( 0, 3, 0 );
 	controls.update();
