@@ -165,20 +165,20 @@ const torusgeometry = new THREE.TorusGeometry(
 
 	const rectgeometry = new THREE.BoxGeometry( 3, boxHeight, boxDepth );
 	const prisms = [
-		makeInstance ( rectgeometry, '/asgn5A/Code/wood.jpg', 0, 1, 2 ),
+		makeInstance ( rectgeometry, './asgn5A/Code/wood.jpg', 0, 1, 2 ),
 	];
 	const cubes = [
-		makeInstance( geometry, '/asgn5A/Code/dirt texture.jpg', 4 , 2, -5 ),
-		makeInstance( geometry, '/asgn5A/Code/wood.jpg', - 4, 5, -3 ),
+		makeInstance( geometry, './asgn5A/Code/dirt texture.jpg', 4 , 2, -5 ),
+		makeInstance( geometry, './asgn5A/Code/wood.jpg', - 4, 5, -3 ),
 		makeInstance( geometry, 'custom', 2, 3, 0 ),
 	];
 	{
 		const mtlLoader = new MTLLoader();
-		mtlLoader.load('/asgn5A/horseobj/horse.mtl', (mtl) => {
+		mtlLoader.load('./asgn5A/horseobj/horse.mtl', (mtl) => {
 		  mtl.preload();
 		  const objLoader = new OBJLoader();
 		  objLoader.setMaterials(mtl);
-		  objLoader.load('/asgn5A/horseobj/horse.obj', (root) => {
+		  objLoader.load('./asgn5A/horseobj/horse.obj', (root) => {
 			scene.add(root);
 		  });
 		});
@@ -238,12 +238,12 @@ const torusgeometry = new THREE.TorusGeometry(
 	{
 		const loader = new THREE.CubeTextureLoader();
 		const texture = loader.load([
-		  '/asgn5A/cubemap/walls.png', //posx
-		  '/asgn5A/cubemap/walls.png', //negx
-		  '/asgn5A/cubemap/sky.webp', //posy
-		  '/asgn5A/cubemap/floor.webp', //negy
-		  '/asgn5A/cubemap/walls.png', //posz
-		  '/asgn5A/cubemap/walls.png', //negz
+		  './asgn5A/cubemap/walls.png', //posx
+		  './asgn5A/cubemap/walls.png', //negx
+		  './asgn5A/cubemap/sky.webp', //posy
+		  './asgn5A/cubemap/floor.webp', //negy
+		  './asgn5A/cubemap/walls.png', //posz
+		  './asgn5A/cubemap/walls.png', //negz
 		]);
 		scene.background = texture;
 	  }
