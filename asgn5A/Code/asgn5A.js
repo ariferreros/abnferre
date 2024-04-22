@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import {OBJLoader} from 'three/addons/loaders/OBJLoader.js';
 import {MTLLoader} from 'three/addons/loaders/MTLLoader.js';
 
-
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 
@@ -108,12 +107,12 @@ function main() {
 		const loader = new THREE.TextureLoader();
 		if (url === 'custom'){
 			const materials = [
-				new THREE.MeshBasicMaterial({map: loadColorTexture('/asgn5A/Code/red.jpg')}),
-				new THREE.MeshBasicMaterial({map: loadColorTexture('/asgn5A/Code/redamongus.webp')}),
-				new THREE.MeshBasicMaterial({map: loadColorTexture('/asgn5A/Code/cyan.jpg')}),
-				new THREE.MeshBasicMaterial({map: loadColorTexture('/asgn5A/Code/yellow.jpg')}),
-				new THREE.MeshBasicMaterial({map: loadColorTexture('/asgn5A/Code/light blue.jpg')}),
-				new THREE.MeshBasicMaterial({map: loadColorTexture('/asgn5A/Code/orange.jpg')}),
+				new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/red.jpg')}),
+				new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/redamongus.webp')}),
+				new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/cyan.jpg')}),
+				new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/yellow.jpg')}),
+				new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/light blue.jpg')}),
+				new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/orange.jpg')}),
 			
 			  ];
 			  const cube = new THREE.Mesh(geometry, materials);
