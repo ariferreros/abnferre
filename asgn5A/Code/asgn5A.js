@@ -85,7 +85,6 @@ function main() {
 		const loader = new THREE.TextureLoader();
 		const texture = loader.load( './asgn5A/cubemap/floor.webp' );
 		
-
 		const planeGeo = new THREE.PlaneGeometry( planeSize, planeSize );
 		const planeMat = new THREE.MeshPhongMaterial( {
 			map: texture,
