@@ -117,16 +117,43 @@ function main() {
 			  const cube = new THREE.Mesh(geometry, materials);
  
 			function loadColorTexture( path ) {
-			const texture = loader.load( path );
-  			texture.colorSpace = THREE.SRGBColorSpace;
-  			return texture;
+				const texture = loader.load( path );
+				texture.colorSpace = THREE.SRGBColorSpace;
+				return texture;
 			}
 			scene.add( cube );
 			cube.position.x = x;
 			cube.position.y = y;
 			cube.position.z = z;
 
-		return cube;
+			return cube;
+		}
+		else if (url === 'tv'){ {
+			
+				const materials = [
+					new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/tvSides.jpg')}),
+					new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/tvSides.jpg')}),
+					new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/tvSides.jpg')}),
+					new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/tvSides.jpg')}),
+					new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/tvSides.jpg')}),
+					new THREE.MeshBasicMaterial({map: loadColorTexture('./asgn5A/Code/tvScreen.png')}),
+				
+				  ];
+				  const cube = new THREE.Mesh(geometry, materials);
+	 
+				function loadColorTexture( path ) {
+				const texture = loader.load( path );
+				  texture.colorSpace = THREE.SRGBColorSpace;
+				  return texture;
+				}
+				scene.add( cube );
+				cube.position.x = x;
+				cube.position.y = y;
+				cube.position.z = z;
+	
+			return cube;
+		
+			}
 		}
 		else{
 			const texture = loader.load( url );
@@ -161,15 +188,60 @@ const torusgeometry = new THREE.TorusGeometry(
 		makeInstance (torusgeometry, '', -3,3,-1),
 	];
 
-
+	const tvGeometry = new THREE.BoxGeometry(.5, .5, .5);
+	const tvGeometryBIG = new THREE.BoxGeometry(.8, .8, .8);
+	const phoneGeometry =new THREE.BoxGeometry(.5, .3, .8 );
+	//const phoneGeometry =new THREE.CylinderGeometry(.5, .5, 1, 5 );
 	const rectgeometry = new THREE.BoxGeometry( 3, boxHeight, boxDepth );
+	const stageGeometry = new THREE.BoxGeometry( 15, .5, 3 );
+	const animatroniclegs = new THREE.CylinderGeometry(.3, .3, 2, 10 );
+	const animatronicBody = new THREE.CylinderGeometry(1, 1, 2, 10 );
+	const animatronicStomach = new THREE.CylinderGeometry(.8, .8, 2, 10 );
+
+	const animatronicHead = new THREE.CylinderGeometry(.7, .7, 1, 10 );
+	const hatBrim = new THREE.CylinderGeometry(.8, .8, .1, 10 );
+	const hatTop = new THREE.CylinderGeometry(.6, .6, .7, 10 );
+	const bowLeft = new THREE.ConeGeometry(.5, .5, 3 );
+	const bowMiddle = new THREE.BoxGeometry(.2, .2, .5);
+	const animatronicMouth = new THREE.CylinderGeometry(.4, .4, .3, 10 );
+
 	const prisms = [
 		makeInstance ( rectgeometry, './asgn5A/Code/wood.jpg', 0, 1, 2 ),
+		makeInstance( tvGeometry, 'tv', 1, 1.7, 2 ),
+		makeInstance( tvGeometryBIG, 'tv', -1, 1.8, 2),
+		makeInstance( tvGeometry, 'tv', -.9, 2.4, 2),
+		makeInstance(stageGeometry, './asgn5A/Code/wood.jpg', 0, 0.2, 5 ),
+		makeInstance(phoneGeometry, './asgn5A/Code/phone.jpg', .3, 1.5, 2 ),
+
 	];
+
+	const animatronic =[
+		makeInstance(animatroniclegs, './asgn5A/Code/fazbear.jpg', -.5, 1, 5 ),
+		makeInstance(animatroniclegs, './asgn5A/Code/fazbear.jpg', .5, 1, 5 ),
+		makeInstance( animatronicBody, './asgn5A/Code/fazbear.jpg', 0, 3, 5),
+		makeInstance(animatroniclegs, './asgn5A/Code/fazbear.jpg', -1.2, 3.1, 5 ),
+		makeInstance(animatroniclegs, './asgn5A/Code/fazbear.jpg', 1.2, 3.1, 5 ),
+		makeInstance(animatronicHead, './asgn5A/Code/fazbear.jpg', 0, 4.5, 5 ),
+		makeInstance(animatronicStomach, './asgn5A/Code/fazbearlight.jpg',  0, 3, 4.5),
+		makeInstance(animatronicMouth, './asgn5A/Code/fazbearlight.jpg',  0, 4.5, 4.5),
+		makeInstance(bowMiddle, '',0, 4.7, 4.4),
+		makeInstance(hatBrim, '', 0, 5, 5 ),
+		makeInstance(hatTop, '', 0, 5.4, 5 ),
+		makeInstance(bowLeft, '', .4, 4.3, 4.4 ),
+		makeInstance(bowLeft, '', -.4, 4.3, 4.4 ),
+		makeInstance(bowMiddle, '',0, 4.2, 4.4),
+
+
+
+
+
+
+	]
 	const cubes = [
 		makeInstance( geometry, './asgn5A/Code/dirt texture.jpg', 4 , 2, -5 ),
 		makeInstance( geometry, './asgn5A/Code/wood.jpg', - 4, 5, -3 ),
 		makeInstance( geometry, 'custom', 2, 3, 0 ),
+		
 	];
 	{
 		const mtlLoader = new MTLLoader();
